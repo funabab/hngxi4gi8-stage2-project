@@ -1,6 +1,6 @@
 # HNGxi4Gi8 Stage Two Project
 
-[View Live 🚀🚀🚀](https://hngxi4gi8-stage2-project.herokuapp.com)
+[View Live 🚀🚀🚀](https://hngxi4gi8-stage2-project.herokuapp.com/)
 
 
 
