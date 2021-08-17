@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,500&family=Style+Script&display=swap');
+@import url('./icon.css');
+/* https://fonts.google.com/share?selection.family=Montserrat:ital,wght@0,400;0,700;1,500%7CStyle%20Script */
+
+:root {
+  --primary-color: #66b9f1;
+  --primary-color-lighter: #cae0f0;
+  --primary-color-darker: #5aa7da;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: normal;
+}
+
+em {
+  font-style: normal;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-size: 1.6rem;
+  font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  height: 60vh;
+  text-align: center;
+  font-size: 1.8rem;
+  color: rgb(241, 241, 241);
+  background: url(/images/bg.jpg) no-repeat center/cover, rgba(0, 0, 0, 0.6);
+  background-blend-mode: multiply;
+  text-transform: lowercase;
+}
+
+header .content {
+  padding: 1rem 0;
+  font-size: 3.2rem;
+  font-family: 'Style Script', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header .content img {
+  height: 5rem;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+.container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--primary-color);
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+  font-weight: 700;
+}
+
+.badge::after {
+  content: '';
+  display: block;
+  position: absolute;
+  border-right: 1rem solid transparent;
+  border-left: 1rem solid transparent;
+  border-top: 1rem solid var(--primary-color-darker);
+  top: 100%;
+  left: 1rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  margin: 0.5rem;
+}
+
+.bg-primary-lighter {
+  background: var(--primary-color-lighter);
+  color: rgb(87, 87, 87);
+}
+
+.border-black {
+  border: 1px solid black;
+}
+
+main .content {
+  height: 60vh;
+  margin-top: -45vh;
+  background: white;
+  display: flex;
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+main #photo-container,
+main #profile-container {
+  flex: 1;
+}
+
+main #profile-container {
+  position: relative;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+}
+
+main #photo-container {
+  padding: 2rem;
+}
+
+main #photo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+main #profile-container h2 {
+  padding: 2rem 0;
+  font-size: 3rem;
+}
+
+main #profile-container .profile-title {
+  font-weight: 500;
+  display: block;
+}
+
+main #profile-container table {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgb(202, 202, 202);
+  width: 100%;
+  text-align: left;
+}
+
+main #profile-container table {
+  font-size: 1.4rem;
+}
+
+main #profile-container table td,
+main #profile-container table th {
+  padding: 0.5rem;
+}
+
+main #profile-container table th {
+  color: rgb(48, 48, 48);
+  text-transform: uppercase;
+  padding-right: 1rem;
+}
+
+main #profile-container table .icon {
+  color: rgb(90, 90, 90);
+}
+
+#social-links {
+  padding: 2rem;
+  background: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 1rem;
+  font-size: 1.8rem;
+}
+
+#action-btn-container a {
+  display: inline-block;
+}
+
+#action-btn-container {
+  text-align: center;
+  padding: 1rem;
+}
+
+.swal2-container,
+.swal2-actions,
+.swal2-html-container,
+.swal2-validation-message {
+  font-size: 1.6rem !important;
+  position: relative;
+}
+
+@media screen and (max-width: 700.1px) {
+  main .content {
+    display: block;
+    height: max-content;
+  }
+
+  main #photo-container {
+    height: 35rem;
+  }
+}
+
+@media screen and (max-width: 900.1px) {
+  .container {
+    width: 100%;
+  }
+}
