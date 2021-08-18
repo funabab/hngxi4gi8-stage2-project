@@ -1,8 +1,7 @@
 const express = require('express')
 const path = require('path')
 const validator = require('validator').default
-const { isHeroku } = require('./utils')
-const { mailer } = require('./middlewares')
+const { mailer, useHerokuRedirectHTTPS } = require('./middlewares')
 
 require('dotenv').config()
 
@@ -10,21 +9,10 @@ const app = express()
 
 const PORT = process.env.PORT || 5000
 const MODE = process.env.NODE_ENV || 'development'
-const isDevelopment = MODE === 'development'
 
-app.all('*', (req, res, next) => {
-  if (
-    !isDevelopment &&
-    isHeroku() &&
-    req.headers['x-forwarded-proto'] != 'https'
-  ) {
-    res.redirect('https://' + req.headers.host + req.url)
-  } else {
-    next()
-  }
-})
-
+app.use(useHerokuRedirectHTTPS(MODE))
 app.use(express.static('public'))
+
 app.post(
   '/contact',
   express.json(),

@@ -1,4 +1,19 @@
 const axios = require('axios').default
+const { isHeroku } = require('./utils')
+
+function useHerokuRedirectHTTPS(mode = 'production') {
+  return (req, res, next) => {
+    if (
+      mode === 'production' &&
+      isHeroku() &&
+      req.headers['x-forwarded-proto'] != 'https'
+    ) {
+      res.redirect('https://' + req.headers.host + req.url)
+    } else {
+      next()
+    }
+  }
+}
 
 function mailer(name) {
   return (_, res, next) => {
@@ -44,4 +59,4 @@ function mailer(name) {
   }
 }
 
-module.exports = { mailer }
+module.exports = { mailer, useHerokuRedirectHTTPS }
