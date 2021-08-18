@@ -37,6 +37,7 @@ body {
   min-height: 100vh;
   font-size: 1.6rem;
   font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(230, 230, 230);
 }
 
 a {
