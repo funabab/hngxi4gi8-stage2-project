@@ -1,4 +1,6 @@
 window.FrontendApp = (function () {
+  AOS.init()
+
   return {
     showContactPopup: function () {
       Swal.fire({
