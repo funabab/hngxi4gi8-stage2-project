@@ -251,7 +251,7 @@ window.startGame = (function () {
     context.lineWidth = 2
     context.strokeRect(0, 0, width, height)
 
-    context.setLineDash([10, 10])
+    // context.setLineDash([10, 10])
     context.beginPath()
     context.moveTo(0, height / 2)
     context.lineTo(width, height / 2)

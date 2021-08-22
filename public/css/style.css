@@ -51,12 +51,14 @@ a {
 }
 
 #main-content {
-  background: linear-gradient(
+  /* background: linear-gradient(
     180deg,
     rgb(230, 230, 230),
     98%,
     rgba(0, 0, 0, 0.4)
-  );
+  ); */
+
+  background: rgb(240, 240, 240);
   min-height: 100vh;
 }
 
@@ -119,6 +121,7 @@ header .content img {
   cursor: pointer;
   text-transform: uppercase;
   margin: 0.5rem;
+  background: none;
 }
 
 .fill-content {
@@ -127,12 +130,21 @@ header .content img {
 }
 
 .bg-primary-lighter {
-  background: var(--primary-color-lighter);
+  background: var(--primary-color-darker);
   color: rgb(87, 87, 87);
 }
 
 .border-black {
   border: 1px solid black;
+}
+
+.border-primary {
+  border: 1px solid var(--primary-color-darker);
+  color: var(--primary-color-darker);
+}
+
+.text-light {
+  color: rgb(255, 255, 255);
 }
 
 main .content {
