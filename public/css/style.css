@@ -11,6 +11,7 @@
   --primary-color: #66b9f1;
   --primary-color-lighter: #cae0f0;
   --primary-color-darker: #5aa7da;
+  --body-bg-color: rgb(240, 240, 240);
 }
 
 * {
@@ -43,6 +44,7 @@ body {
   font-size: 1.6rem;
   font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
+  background: var(--body-bg-color);
 }
 
 a {
@@ -58,7 +60,7 @@ a {
     rgba(0, 0, 0, 0.4)
   ); */
 
-  background: rgb(240, 240, 240);
+  background: var(--body-bg-color);
   min-height: 100vh;
 }
 
@@ -80,6 +82,13 @@ header .content {
 
 header .content img {
   height: 5rem;
+}
+
+footer {
+  background: rgb(43, 43, 43);
+  padding: 2rem;
+  color: rgb(177, 177, 177);
+  text-align: center;
 }
 
 .font-bold {
@@ -246,12 +255,24 @@ main #profile-container table .icon {
 
 #game-content {
   min-height: 100vh;
-  background: rgb(26, 26, 26);
+  background: rgb(56, 56, 56);
   color: white;
   position: relative;
   height: 100vh;
   display: flex;
-  padding: 10rem 8rem 8rem;
+  flex-direction: column;
+}
+
+#game-content .canvas-container {
+  position: absolute;
+  top: 10rem;
+  bottom: 8rem;
+  left: 8rem;
+  right: 8rem;
+}
+
+#game-content canvas {
+  display: block;
 }
 
 #game-content h2 {
@@ -276,9 +297,80 @@ main #profile-container table .icon {
 
 #game-instruction {
   display: block;
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
   font-style: normal;
   text-align: center;
   padding: 1rem;
+}
+
+.blurb-image-container {
+  width: 15rem;
+  height: 15rem;
+  display: inline-block;
+  position: relative;
+}
+
+.blurb-image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@keyframes anim-rotate {
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.blurb-image-container svg {
+  position: absolute;
+  width: calc(100% + 8rem);
+  height: calc(100% + 8rem);
+  left: -4rem;
+  top: -4rem;
+  animation: anim-rotate 10s linear infinite;
+}
+
+.blurb-image-container svg circle {
+  stroke: rgb(63, 63, 63);
+  fill: none;
+}
+
+.about-container {
+  padding: 3rem 0;
+  text-align: left;
+  font-size: 1.8rem;
+}
+
+#blurb-container {
+  /* background: url(/images/bg.jpg) no-repeat fixed center/cover,
+    rgba(255, 255, 255, 0.4); */
+  background: rgb(220, 220, 220);
+  background-blend-mode: overlay;
+  position: relative;
+  margin-top: 6rem;
+  text-align: center;
+}
+
+#blurb-container::before {
+  content: '';
+  display: block;
+  height: 6rem;
+  top: -4rem;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background: rgb(220, 220, 220);
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+}
+
+#blurb-container .container {
+  padding: 10rem 2rem;
 }
 
 @media screen and (max-width: 700.1px) {
@@ -297,7 +389,14 @@ main #profile-container table .icon {
     width: 100%;
   }
 
-  #game-content {
+  #game-content h2 {
     display: none;
+  }
+
+  #game-content .canvas-container {
+    left: 1rem;
+    right: 1rem;
+    top: 1rem;
+    bottom: 5rem;
   }
 }

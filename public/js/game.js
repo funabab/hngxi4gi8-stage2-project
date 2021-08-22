@@ -222,7 +222,8 @@ window.startGame = (function () {
 
     handleInput(e) {
       const event = e instanceof TouchEvent ? e.changedTouches[0] : e
-      if (event) this.paddle.moveDir = event.clientX >= this.bound ? 1 : -1
+      if (event)
+        this.paddle.moveDir = event.clientX >= window.innerWidth / 2 ? 1 : -1
       else this.paddle.moveDir = 0
     }
 
@@ -248,7 +249,7 @@ window.startGame = (function () {
     context.clearRect(0, 0, width, height)
     // draw outer border
     context.strokeStyle = 'white'
-    context.lineWidth = 2
+    context.lineWidth = 4
     context.strokeRect(0, 0, width, height)
 
     // context.setLineDash([10, 10])

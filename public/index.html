@@ -97,19 +97,55 @@
       </main>
     </section>
 
+    <section id="blurb-container">
+      <div class="container">
+        <div
+          class="blurb-image-container"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+        >
+          <svg viewBox="0 0 140 140">
+            <circle
+              cx="70"
+              cy="70"
+              r="50"
+              stroke="10"
+              stroke-dasharray="10, 10"
+            ></circle>
+          </svg>
+          <img src="/images/me.jpg" alt="" />
+        </div>
+        <div
+          class="about-container"
+          data-aos="fade-up"
+          data-aos="zoom-in"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+        >
+          I'm a Fullstack Software Engineer from Nigeria. I make functional web
+          applications on LAMP and MERN stack, and I have keen interest in
+          solving problems.
+        </div>
+      </div>
+    </section>
+
     <section id="game-content">
-      <h2>Keep scrolling down... i want to show you something...</h2>
-      <div data-aos="zoom-in" data-aos-delay="700" style="flex: 1">
-        <audio id="audio-music" src="audios/music.mp3" loop></audio>
+      <audio id="audio-music" src="audios/music.mp3" loop></audio>
+      <h2 data-aos="fade-down" data-aos-duration="1000">
+        Keep scrolling down... i want to show you something...
+      </h2>
+      <div class="canvas-container" data-aos="zoom-in" data-aos-delay="700">
         <canvas
           id="game-canvas"
           width="800"
           height="800"
           onclick="window.startGame();"
         ></canvas>
-        <em id="game-instruction">Click on board to start</em>
       </div>
+      <em id="game-instruction">Click on board to start</em>
     </section>
+
+    <footer>Footer nothing to actually show here....</footer>
 
     <script src="/js/app.js"></script>
     <script src="/js/game.js"></script>
