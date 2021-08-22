@@ -123,11 +123,11 @@ window.startGame = (function () {
             this.lastCollide = col
             this.moveSpeedX = Math.max(
               100,
-              Math.min(350, this.moveSpeedX * Math.random() * 2)
+              Math.min(350, this.moveSpeedX + this.moveSpeedX * Math.random())
             )
             this.moveSpeedY = Math.max(
               100,
-              Math.min(350, this.moveSpeedY * Math.random() * 2)
+              Math.min(350, this.moveSpeedY + this.moveSpeedY * Math.random())
             )
             this.randomDir(col.y >= this.boundY / 2 ? 0 : 1)
             this.dispatchEvent(new CustomEvent('collide', { details: col }))
